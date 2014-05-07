@@ -75,7 +75,7 @@ func send(flow <-chan *http.Request) error {
 			if err = ch.Publish(
 				*exchange,
 				*routingKey,
-				false, //mandatory
+				false, //non-mandatory
 				false, //it's not supported nmore since RabbitMQ 3.x
 				amqp.Publishing{
 					Headers:         amqp.Table{},
