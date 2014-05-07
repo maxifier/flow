@@ -144,7 +144,7 @@ func NewConsumer(conn *amqp.Connection, queue *amqp.Queue, file *os.File, ctag s
 	deliveries, err := self.channel.Consume( //<-chan amqp.Delivery
 		queue.Name, // name
 		self.tag,   // consumerTag,
-		false,      // noAck
+		true,       // noAck
 		false,      // exclusive
 		false,      // noLocal
 		false,      // noWait
